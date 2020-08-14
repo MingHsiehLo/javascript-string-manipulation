@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const assets = require("chai");
+const { assets } = require("chai");
 const { describe, it } = require("mocha");
 const { lf } = global.lf || require("index.js");
 
