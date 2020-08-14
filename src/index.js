@@ -3,9 +3,9 @@ var lf = (arr, ...interpolated) => {
   return arr.reduce((acc, value, i) => {
     let interpolatedValue = interpolated[i] !== null ? interpolated[i] : '';
     if (!Object.getOwnPropertySymbols(interpolatedValue).includes(disableConverter)) {
-      interpolatedValue = transformLineEnding(interpolatedValue, lineEnding.LF);
+      interpolatedValue = transformLineEnding(interpolatedValue, lineEndings.LF);
     }
-    const transformedValue = transformLineEnding(value, lineEnding.LF);
+    const transformedValue = transformLineEnding(value, lineEndings.LF);
     return `${acc}${transformedValue}${interpolatedValue}`;
   }, '');
 };
@@ -15,9 +15,9 @@ var cr = (arr, ...interpolated) => {
   return arr.reduce((acc, value, i) => {
     let interpolatedValue = interpolated[i] !== null ? interpolated[i] : '';
     if (!Object.getOwnPropertySymbols(interpolatedValue).includes(disableConverter)) {
-      interpolatedValue = transformLineEnding(interpolatedValue, lineEnding.CR);
+      interpolatedValue = transformLineEnding(interpolatedValue, lineEndings.CR);
     }
-    const transformedValue = transformLineEnding(value, lineEnding.CR);
+    const transformedValue = transformLineEnding(value, lineEndings.CR);
     return `${acc}${transformedValue}${interpolatedValue}`;
   }, '');
 };
@@ -27,9 +27,9 @@ var crlf = (arr, ...interpolated) => {
   return arr.reduce((acc, value, i) => {
     let interpolatedValue = interpolated[i] !== null ? interpolated[i] : '';
     if (!Object.getOwnPropertySymbols(interpolatedValue).includes(disableConverter)) {
-      interpolatedValue = transformLineEnding(interpolatedValue, lineEnding.CRLF);
+      interpolatedValue = transformLineEnding(interpolatedValue, lineEndings.CRLF);
     }
-    const transformedValue = transformLineEnding(value, lineEnding.CRLF);
+    const transformedValue = transformLineEnding(value, lineEndings.CRLF);
     return `${acc}${transformedValue}${interpolatedValue}`;
   }, '');
 };
