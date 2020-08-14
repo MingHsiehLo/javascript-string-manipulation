@@ -1,7 +1,7 @@
 // Create a tagged template lf`...` that formats text using LF line endings.
 var lf = (arr, ...interpolated) => {
   return arr.reduce((acc, value, i) => {
-    let interpolatedValue = interpolated[i] !== null ? interpolated[i] : '';
+    let interpolatedValue = interpolated[i] !== undefined ? interpolated[i] : '';
     if (!Object.getOwnPropertySymbols(interpolatedValue).includes(disableConverter)) {
       interpolatedValue = transformLineEnding(interpolatedValue, LineEndings.LF);
     }
@@ -13,7 +13,7 @@ var lf = (arr, ...interpolated) => {
 // Create a tagged template cr`...` that formats text using CR line endings.
 var cr = (arr, ...interpolated) => {
   return arr.reduce((acc, value, i) => {
-    let interpolatedValue = interpolated[i] !== null ? interpolated[i] : '';
+    let interpolatedValue = interpolated[i] !== undefined ? interpolated[i] : '';
     if (!Object.getOwnPropertySymbols(interpolatedValue).includes(disableConverter)) {
       interpolatedValue = transformLineEnding(interpolatedValue, LineEndings.CR);
     }
@@ -25,7 +25,7 @@ var cr = (arr, ...interpolated) => {
 // Create a tagged template crlf`...` that formats text using CRLF line endings.
 var crlf = (arr, ...interpolated) => {
   return arr.reduce((acc, value, i) => {
-    let interpolatedValue = interpolated[i] !== null ? interpolated[i] : '';
+    let interpolatedValue = interpolated[i] !== undefined ? interpolated[i] : '';
     if (!Object.getOwnPropertySymbols(interpolatedValue).includes(disableConverter)) {
       interpolatedValue = transformLineEnding(interpolatedValue, LineEndings.CRLF);
     }
